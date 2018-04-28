@@ -4,11 +4,18 @@
     --main-font-family: "Arial MT", Arial, sans-serif;
     --title-font-family: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     --main-font-size: 18px;
+    /* padding: 0; */
 }
 
+*{
+    padding: 0;
+}
 
 .header{
+    display: flex;
+    flex-flow: row nowrap;
 
+    height: 60px;
 }
 
 .logo{
@@ -90,7 +97,7 @@ input:focus ~ .search-form__focus-line:before, input:focus ~ .search-form__focus
     border: none;
     color: white;
     padding: 12px 16px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -110,11 +117,10 @@ input:focus ~ .search-form__focus-line:before, input:focus ~ .search-form__focus
 .dropbtn {
     background-color: #00b3be;
     color: white;
-    padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 300px;
+
 }
 
 
@@ -145,4 +151,22 @@ input:focus ~ .search-form__focus-line:before, input:focus ~ .search-form__focus
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+
+    background: var(--main-color);
+    color: white;
+
+    padding-top: 15px;
+    text-align: center;
+
 }
