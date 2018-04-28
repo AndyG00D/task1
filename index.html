@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="header">
     <img src="img/sell-it.png" height="41" width="116" class="logo"/>
     <div class="search-form">
-        <div class="search-form__icon"></div>
-        <input type="text" class="search-form__input">
+        <button class="search-form__button"></button>
+        <input type="text" class="search-form__input" required placeholder="Try find somethink">
+        <div class="search-form__focus-line"></div>
     </div>
 
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Right</button>
+        <div class="dropbtn">Right
+            <button class="btn"><i class="fa fa-sign-out"></i></button>
+            <button class="btn"><i class="fa fa-search"></i></button>
+        </div>
         <div class="submenu">
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
