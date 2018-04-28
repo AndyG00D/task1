@@ -33,9 +33,14 @@
     cursor: pointer;
     border: 0;
 
-    background: url(ico/fa-search.svg) no-repeat;
-    background-position: center;
+    color: var(--main-text-color);
+    background-color: white;
 }
+
+.search-form__button:hover{
+    color: var(--main-color);
+}
+
 .search-form__input{
     box-sizing: border-box;
     width: 100%;
