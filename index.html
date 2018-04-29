@@ -34,12 +34,7 @@
 </header>
     <!--content-->
 <main>
-
-    <div class="slider"><img src="" alt="" class="slider__img">
-        <div class="slider__btn_prev"></div>
-        <div class="slider__btn_next"></div>
-    </div>
-
+    <!--slideshow-->
     <div class="slideshow">
 
         <div class="slideshow__slide slideshow__slide_fade">
@@ -59,31 +54,72 @@
 
     </div>
 
+    <!--about-->
+    <div class="about">
+        <h2 class="about__title">Some title text must be here maybe second  line</h2>
+        <p>from Alis Kim</p> <span class="about__price">18000 $</span>
 
+        <p class="about__text">
+            Some description text from WYSIWYG editer<br><br>
+            Can be Can be <span class="text_bold">BOLD </span><span class="text_italic">Italic</span><br><br>
+            <span class="text_bold">Can have list:</span>
+                <ul class="text_bold">
+            <li>first</li>
+            <li>second</li>
+        </ul><br><br>
+        <span class="text_bold"> And anything from WYSIWYG editor<br><br>
+            Some line</span><br>
+            Some line <br>
+            <span class="text_italic">Some line</span> <br><br>
+            <span class="text_bold">Finished on this line.</span>
+        </p>
+
+    </div>
+    <!--about-->
+    <div>
+
+    </div>
+
+    <!--about-->
+    <p>Connected</p>
+    <div class="chat-list">
     <ul class="mdc-list mdc-list--avatar-list demo-list demo-list--with-avatars">
+
     <li class="mdc-list-item">
-        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" alt="Kim Evans"/>
+        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" />
+        Alis Kim
+    </li>
+    <li class="mdc-list-item">
+        <img class="mdc-list-item__graphic" src="img/user2_40_40.png" height="40" width="40"/>
         Kim Evans
     </li>
-    <li class="mdc-list-item">
-        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" />
-        Panda
-    </li>
-    <li class="mdc-list-item">
-        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" />
-        Panda
-    </li>
-    <li class="mdc-list-item">
-        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" height="40" width="40"/>
-        Panda
-    </li>
     </ul>
+        <div class="chat-list">
 
 
-    <div class="photo-box"></div>
-    <div class="about-box"></div>
-    <div class="chat-box"></div>
-    <div class="chat-list"></div>
+            <div class="chat">
+                <p class="chat__title"></p>
+                <span class="chat__status-ico"></span>
+
+            <div class="chat__messages">
+                <div class="chat__message-line">
+                    <img class="chat__message-photo" src="img/user2_25_25.png">
+                    <div class="chat__message-text">One line chat message</div>
+                </div>
+                <div class="chat__message-line chat__message_own chat__message_multi-line">
+                    <img class="chat__message-photo" src="img/user1_25_25.png">
+                    <div class="chat__message-text">
+                        Multi line chat message. Some  text for multi line message. What
+                        is your name. Oh sorry. My bad, your name I think  Alis. Right?
+                        Please send me your contacts. May be your facebook page or
+                        some think alse. How much cost this t shirt?
+                    </div>
+                </div>
+
+            </div>
+            <div class="chat__input"></div><div class="chat__send-ico"></div>
+            </div>
+
 </main>
 <footer>2017 - front-end labs Light IT</footer>
 </div>
