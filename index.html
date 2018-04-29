@@ -5,25 +5,88 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+<div class="wrapped">
+    <!--header-->
 <header class="header">
+    <!--logo-->
     <img src="img/sell-it.png" height="41" width="116" class="logo"/>
+    <!--search-form-->
     <div class="search-form">
         <button class="search-form__button"><i class="fa fa-search"></i></button>
         <input type="text" class="search-form__input" required placeholder="Try find somethlink">
         <div class="search-form__focus-line"></div>
     </div>
-
-    <div class="dropdown" style="float:right;">
-        <div class="dropbtn">Right
+    <!--user-menu-->
+    <div class="dropdown">
+        <div class="dropbtn">
+            <img class="mdc-list-item__graphic" src="img/user1_40_40.png" alt="Kim Evans"/>
+            Kim Evans
             <button class="btn"><i class="fa fa-search"></i></button>
         </div>
         <div class="submenu">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
+            <button>Link 1</button>
+            <button>Link 2</button>
         </div>
     </div>
 </header>
+    <!--content-->
+<main>
+
+    <div class="slider"><img src="" alt="" class="slider__img">
+        <div class="slider__btn_prev"></div>
+        <div class="slider__btn_next"></div>
+    </div>
+
+    <div class="slideshow">
+
+        <div class="slideshow__slide slideshow__slide_fade">
+            <img src="img/post1.jpg" style="width:100%">
+        </div>
+
+        <div class="slideshow__slide slideshow__slide_fade">
+            <img src="img/post2.jpg">
+        </div>
+
+        <div class="slideshow__slide slideshow__slide_fade">
+            <img src="img/post3.jpg">
+        </div>
+
+        <a class="slideshow__btn" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="slideshow__btn slideshow__btn_next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+
+    <ul class="mdc-list mdc-list--avatar-list demo-list demo-list--with-avatars">
+    <li class="mdc-list-item">
+        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" alt="Kim Evans"/>
+        Kim Evans
+    </li>
+    <li class="mdc-list-item">
+        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" />
+        Panda
+    </li>
+    <li class="mdc-list-item">
+        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" />
+        Panda
+    </li>
+    <li class="mdc-list-item">
+        <img class="mdc-list-item__graphic" src="img/user1_40_40.png" height="40" width="40"/>
+        Panda
+    </li>
+    </ul>
+
+
+    <div class="photo-box"></div>
+    <div class="about-box"></div>
+    <div class="chat-box"></div>
+    <div class="chat-list"></div>
+</main>
+<footer>2017 - front-end labs Light IT</footer>
+</div>
+<script src="js.js"></script>
 </body>
 </html>
