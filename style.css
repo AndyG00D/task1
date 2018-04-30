@@ -18,15 +18,14 @@ body{
 }
 
 .wrapped{
-    width: 515px;
-    margin: 0 auto;
+
 }
 
 .header{
-    position:  fixed;
+    position: fixed;
     z-index: 99;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     height: 60px;
@@ -34,33 +33,55 @@ body{
     background-color: white;
 }
 
-main {
-    padding-top: 200px;
-    height: 20000px;
-    width: 100%;
-    display: block;
-    background: #574c3c;
-    /* box-sizing:  border-box; */
+.main {
+    margin: 0px auto;
+    width: 950px;
+    padding-top: 150px;
+
 }
 
+.product{
+    display: grid;
+    grid-template-columns: 512px auto ;
+    grid-template-rows: auto;
+}
+
+.chat{
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto;
+    grid-template-areas:
+            "chat-title chat-title"
+            "main main  chat-list"
+            "footer footer footer footer";
+}
+
+
+
+
+
+
+
+/* logo ================================= */
 .logo{
     margin-left: 50px;
 }
 
-.search-form{
+/* input-text ================================= */
+.input-text{
     position: relative;
-
+    display: flex;
+    flex-flow: row wrap;
     box-sizing: border-box;
     height: 30px;
-    width: 452px;
+    min-width: 452px;
+    border-bottom: 1px solid var(--main-text-color);
 }
-.search-form__button{
-    position: absolute;
-    z-index: 100;
+.input-text__button{
 
     box-sizing: border-box;
-    width: 24px;
     height: 100%;
+    width: 24px;
 
     cursor: pointer;
     border: 0;
@@ -69,16 +90,15 @@ main {
     background-color: white;
 }
 
-.search-form__button:hover{
+.input-text__button:hover{
     color: var(--main-color);
 }
 
-.search-form__input{
+.input-text__input{
+    flex-basis: calc(100% - 24px);
     box-sizing: border-box;
-    width: 100%;
     height: 100%;
-
-    padding: 0 0 0 24px;
+    padding: 0;
     border: 0;
 
     font-family: var(--main-font-family);
@@ -87,11 +107,11 @@ main {
 
  input:focus { outline:none; }
 
-/* focus-line ================================= */
-.search-form__focus-line 	{
-    position:relative;
+/* focus-line */
+.input-text__focus-line 	{
+    flex-basis: 100%;
 }
-.search-form__focus-line:before, .search-form__focus-line:after 	{
+.input-text__focus-line:before, .input-text__focus-line:after 	{
     content:'';
     height:1px;
     width:0;
@@ -103,19 +123,81 @@ main {
     -webkit-transition:0.2s ease all;
 }
 
-.search-form__focus-line:before {
+.input-text__focus-line:before {
     left:50%;
 }
-.search-form__focus-line:after {
+.input-text__focus-line:after {
     right:50%;
 }
 
 /* active state */
-input:focus ~ .search-form__focus-line:before, input:focus ~ .search-form__focus-line:after {
+input:focus ~ .input-text__focus-line:before, input:focus ~ .input-text__focus-line:after {
     width:50%;
 }
 
+/* menu ================================= */
+nav{
+    height: 60px;
+    width: 400px;
+}
 
+.menu {
+    width: 600px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--main-color);
+    list-style: none;
+    position: relative;
+    display: flex;
+}
+
+.menu li {
+    display: inline-block;
+    margin: auto;
+}
+
+.menu a  {
+    display:block;
+    padding:0 10px;
+    color:#FFF;
+    font-size:20px;
+    line-height: 60px;
+    text-decoration:none;
+}
+
+nav ul li {
+    display:flex;
+    background-color: #E64A19;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display:block;
+    padding:0 10px;
+    color:#FFF;
+    font-size:20px;
+    line-height: 60px;
+    text-decoration:none;
+}
+
+nav a:hover {
+    background-color: #000000;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+    display:inherit;
+}
 
 .btn {
     background-color: DodgerBlue;
@@ -131,25 +213,20 @@ input:focus ~ .search-form__focus-line:before, input:focus ~ .search-form__focus
     background-color: RoyalBlue;
 }
 
-
-
 .dropdown {
-    position: relative;
-    display: block;
-
-    height: 100%;
-
-
-
-
-
-
-}
-.dropbtn {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 383px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    position: relative;
+
+    height: 100%;
+}
+.dropbtn {
     height: 100%;
     
     padding: 0 25px;
@@ -221,7 +298,7 @@ footer{
 }
 
 .mdc-list-item:hover{
-    background-color: #717171;
+    background-color: rgba(240, 240, 240, 0.8);
 }
 
 
@@ -239,10 +316,7 @@ footer{
     display: none
 }
 
-img {
-    vertical-align: middle;
-    width:100%
-}
+
 
 /* Slideshow container */
 .slideshow {
@@ -252,16 +326,22 @@ img {
     box-sizing:  border-box;
     padding: 0;
 }
+.slideshow__nav{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* Next & previous buttons */
 .slideshow__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
     cursor: pointer;
     position: absolute;
-    height:  100%;
+    height: 100%;
     top: 0;
-    /* width: 50px; */
-    padding: 16px;
-    margin-top: -22px;
     color: black;
     transition: 0.6s ease;
 }
@@ -301,6 +381,7 @@ img {
     .slideshow__btn, .slideshow__btn_next,.text {font-size: 11px}
 }
 
+/* chat__messages ================================= */
 .chat__messages{
     display: flex;
     flex-flow: row wrap; /* fix troubles with overflow when too much messages*/
@@ -326,9 +407,11 @@ img {
     align-items: center;
     margin: 16px 0;
 }
+
 .chat__message_multi-line{
     align-items: stretch;
 }
+
 .chat__message_own{
     flex-direction: row-reverse;
 }
@@ -345,17 +428,14 @@ border-radius: 50%;
     margin: 0 5px;
 }
 
-.chat__message-line::after{
+.chat__message-line::after{ /*vertical line for messages*/
     content: "";
     min-height: var(--main-font-size);
     width: 5px;
     background: var(--main-color);
-
 }
 
-
-
-
+/* chat__messages ================================= */
 .text_italic{
     font-style: italic;
 }
