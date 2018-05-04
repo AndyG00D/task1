@@ -1,3 +1,7 @@
+window.addEventListener('load',function (e) {
+    alert('Hello');
+});
+
 
     let slideIndex = 1;
 showSlides(slideIndex);
