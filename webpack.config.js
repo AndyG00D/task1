@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -6,6 +7,7 @@ module.exports = {
         index: './src/index.js',
         test: './src/index.ts',
     },
+    mode: "development",
     devtool: "eval",
     output: {
         path: __dirname + '/dist',
@@ -31,28 +33,55 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(scss|css)$/,
-                use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
-                }, {
-                    loader: "css-loader" // translates CSS into CommonJS
-                }]
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {}
-                    }
-                ]
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000
+                }
             },
+            // {
+            //     test: /\.(png|jpg|gif|woff(2)?|ttf|eot|svg)$/,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //             options: {
+            //                 limit: 8192
+            //             }
+            //         }
+            //     ]
+            // },
+            // {
+            //     test: /\.(css)$/,
+            //     use: [{
+            //         loader: "style-loader" // creates style nodes from JS strings
+            //     }, {
+            //         loader: "css-loader" // translates CSS into CommonJS
+            //     }]
+            // },
+            // {
+            //     test: /\.css$/,
+            //     loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            // },
+
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [{
-                    loader: 'file-loader',
-                }]
+            test: /\.(png|jpg|gif)$/,
+            use: [
+            {
+                loader: 'file-loader',
+                options: {}
             }
+            ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)?$/,
+                    use: [{
+                loader: 'file-loader',
+            }]
+}
 
         ]
     },
@@ -76,5 +105,6 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery'
         })
+        // new ExtractTextPlugin('main.css')
     ]
 };

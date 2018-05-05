@@ -1,8 +1,8 @@
 /* fonts ================================= */
 @font-face {
     font-family: "Myriad Pro";
-    src: url("/fonts/MyriadPro-Regular/myriadpro-regular.eot") format("eot"),
-    url("/fonts/MyriadPro-Regular/myriadpro-regular.ttf") format("ttf");
+    src: url("../fonts/MyriadPro-Regular/myriadpro-regular.eot") format("eot"),
+    url("../fonts/MyriadPro-Regular/myriadpro-regular.ttf") format("ttf");
 }
 
 /* variables ================================= */
@@ -84,30 +84,14 @@ body {
     }
 }
 
-.content_login-page {
-
-    max-width: 100%;
-    padding-top: 150px;
-    background: url("/img/login-left-section-image.jpg") right top no-repeat;
-    background-size: cover;
-    /*#eee6e3;*/
-    border: 1px solid red;
-}
-
 .login-right-section {
     position: absolute;
     top: 0;
     right: 0;
-    /* margin-right: 0px; */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 1.85rem;
-    /* display: flex; */
-    /* flex-flow: column nowrap; */
-    /* align-items: start; */
-    /* justify-content: start; */
-    /* align-content:  start; */
     width: 383px;
     height: 100vh;
     background: var(--main-color);

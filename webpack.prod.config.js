@@ -17,6 +17,7 @@ module.exports = {
         publicPath: '/',
         filename: '[name].[contenthash].js'
     },
+    mode: "production",
     devServer: {
         contentBase: './dist'
     },
@@ -35,17 +36,27 @@ module.exports = {
                     }, {
                         loader: "sass-loader"
                     }],
-                    // use style-loader in development
                     fallback: "style-loader"
                 })
-            }
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: [ 'css-loader' ]
+                    })
+            },
         ]
     },
     resolve: {
         extensions: ['*', '.js']
     },
     plugins: [
-        // new webpack.optimize.AggressiveSplittingPlugin(),
+           new ExtractTextPlugin({
+                    filename: '[name].css'
+                }),
+
+        new webpack.optimize.AggressiveSplittingPlugin(),
         new CopyWebpackPlugin([
             {from: __dirname + '/src/assets', to: './assets'}
         ]),
