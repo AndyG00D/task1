@@ -1,0 +1,6 @@
+/* fonts ================================= */
+@font-face {
+    font-family: "Myriad Pro";
+    src: url("../fonts/MyriadPro-Regular/myriadpro-regular.eot") format("eot"),
+    url("../fonts/MyriadPro-Regular/myriadpro-regular.ttf") format("ttf");
+}
